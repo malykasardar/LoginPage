@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeHub Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Nunito", sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .dashboard-container {
+      width: 80%;
+      max-width: 900px;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dashboard-header h1 {
+      color: var(--main-color);
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .logout-btn {
+      background: var(--main-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 3px;
+      cursor: pointer;
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      box-shadow: var(--hover-shadow);
+      transform: translateY(-3px);
+    }
+
+    .welcome-msg {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      flex: 1 1 45%;
+      background: #fafafa;
+      padding: 25px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      color: #444;
+      font-size: 16px;
+      min-width: 250px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--main-color);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>CodeHub Dashboard</h1>
+      <button class="logout-btn" onclick="logout()">Log Out</button>
+    </div>
+
+    <p class="welcome-msg" id="welcomeMsg">Welcome back, User!</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Your Projects</h3>
+        <p>You currently have no projects. Start building your portfolio today!</p>
+      </div>
+
+      <div class="card">
+        <h3>Account Status</h3>
+        <p>Your account is active. Keep exploring CodeHub’s features!</p>
+      </div>
+
+      <div class="card">
+        <h3>Tips & Tutorials</h3>
+        <p>Check out our latest guides to improve your coding skills.</p>
+      </div>
+
+      <div class="card">
+        <h3>Support</h3>
+        <p>Need help? Reach out to our support team anytime.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (!user) {
+      alert('You must be logged in.');
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('welcomeMsg').textContent = `Welcome back, ${user.username}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

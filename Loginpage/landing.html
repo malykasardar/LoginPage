@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeHub | Developer Collaboration Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Nunito", sans-serif;
+      background: linear-gradient(to right, #fdfdfd, #f2f2ff);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      box-shadow: var(--nav-shadow);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h2 {
+      color: var(--main-color);
+    }
+
+    header nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    header nav a:hover {
+      color: var(--main-color);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      color: var(--main-color);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons a {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: var(--box-shadow);
+      transition: 0.3s ease;
+    }
+
+    .cta-buttons a.primary {
+      background: var(--main-color);
+      color: white;
+    }
+
+    .cta-buttons a.secondary {
+      border: 2px solid var(--main-color);
+      color: var(--main-color);
+      background: transparent;
+    }
+
+    .cta-buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .features {
+      padding: 80px 50px;
+      text-align: center;
+      background: #f9f9ff;
+    }
+
+    .features h2 {
+      color: var(--main-color);
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow);
+    }
+
+    .feature-box h3 {
+      color: var(--main-color);
+      margin-bottom: 15px;
+    }
+
+    .feature-box p {
+      color: #444;
+      font-size: 16px;
+    }
+
+    .screenshot {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .screenshot img {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow);
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      border-top: 1px solid #eee;
+    }
+
+    footer h2 {
+      margin-bottom: 20px;
+      color: var(--main-color);
+    }
+
+    footer a {
+      text-decoration: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: var(--main-color);
+      color: white;
+      border-radius: 4px;
+      box-shadow: var(--box-shadow);
+      transition: 0.3s ease;
+    }
+
+    footer a:hover {
+      box-shadow: var(--hover-shadow);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>CodeHub</h2>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#screenshot">Preview</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="index.html">Log In</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Build. Collaborate. Ship Faster.</h1>
+    <p>CodeHub is the all-in-one developer platform to write, review, and ship better code with your team — no matter where you are.</p>
+    <div class="cta-buttons">
+      <a href="signup.html" class="primary">Get Started Free</a>
+      <a href="index.html" class="secondary">Log In</a>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2>What You Can Do with CodeHub</h2>
+    <div class="feature-grid">
+      <div class="feature-box">
+        <h3>Collaborative Coding</h3>
+        <p>Work on code with real-time collaboration and version control, powered by Git.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Smart Issue Tracking</h3>
+        <p>Automatically connect code with issues and tasks for seamless project management.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Custom Workspaces</h3>
+        <p>Set up isolated dev environments in seconds, tailored for your stack.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Deploy with One Click</h3>
+        <p>Deploy from CodeHub to your favorite cloud provider without leaving your dashboard.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Code Reviews & Feedback</h3>
+        <p>Leave comments, suggest edits, and improve quality with built-in code review tools.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Secure Collaboration</h3>
+        <p>Enterprise-grade encryption and access control ensure your projects are always protected.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="screenshot" id="screenshot">
+    <h2 style="color: var(--main-color); margin-bottom: 30px;">Product Preview</h2>
+    <img src="images/code.jpeg" alt="CodeHub Screenshot" />
+  </section>
+
+  <footer>
+    <h2>Ready to join the future of coding?</h2>
+    <a href="signup.html">Create Your Account</a>
+  </footer>
+
+</body>
+</html>
